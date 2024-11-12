@@ -30,15 +30,16 @@ public class DialogueManager : MonoBehaviour
         foreach (string dialogueSentence in dialogue.Sentences) {
             _sentences.Enqueue(dialogueSentence);
         }
-        StopAllCoroutines();
         DisplayNextSentence();
     }
 
     public void DisplayNextSentence() {
         if (_sentences.Count == 0) {
+            StopAllCoroutines();
             EndDialogue();
             return;
         }
+        StopAllCoroutines();
         StartCoroutine(TypeSentence(_sentences.Dequeue()));
     }
 

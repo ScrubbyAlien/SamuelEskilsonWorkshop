@@ -730,6 +730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16f4be089a5cad942b299f2ee866380f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  typewriterSpeed: 0.03
   nameField: {fileID: 2110863599}
   dialogueField: {fileID: 1715142636}
   dialogueBoxAnimator: {fileID: 968254905}
