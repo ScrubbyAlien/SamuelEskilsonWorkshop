@@ -35,7 +35,6 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence() {
         if (_sentences.Count == 0) {
-            StopAllCoroutines();
             EndDialogue();
             return;
         }
@@ -51,8 +50,9 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private void EndDialogue() {
+    public void EndDialogue() {
         Debug.Log("End Dialogue");
+        StopAllCoroutines();
         dialogueBoxAnimator.SetBool("inDialogue", false);
         dialogueField.text = "";
         nameField.text = "";

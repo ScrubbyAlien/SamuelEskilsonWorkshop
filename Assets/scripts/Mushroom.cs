@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ using UnityEngine.Events;
 public class Mushroom : MonoBehaviour
 {
     public UnityEvent onTrigger;
+    public UnityEvent onExit;
     
     // Start is called before the first frame update
     void Start()
@@ -20,9 +22,13 @@ public class Mushroom : MonoBehaviour
     }
 
    
-    private void OnTriggerEnter2D(Collider2D collider)
+    private void OnTriggerEnter2D(Collider2D _)
     {
-        onTrigger.Invoke();
-        Destroy(this);
+        onTrigger?.Invoke();
+    }
+
+    private void OnTriggerExit2D(Collider2D _)
+    {
+        onExit?.Invoke();
     }
 }
